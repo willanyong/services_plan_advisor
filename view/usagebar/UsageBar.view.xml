@@ -1,0 +1,15 @@
+<mvc:View
+	controllerName="sap.ui.demo.nav.controller.usagebar.UsageBar"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout" 
+	xmlns:viz="sap.viz.ui5.controls" 
+	xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="UsageChartPage" title="Weekly Usage"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		class="sapUiResponsiveContentPadding">
+					<!--<viz:VizFrame id="idoVizFrame" height="700px" width="100%" uiConfig="{applicationSet:'fiori'}"> </viz:VizFrame>-->
+					<viz:VizFrame id="idoVizFrame4" height="700px" width="100%" uiConfig="{applicationSet:'fiori'}"> </viz:VizFrame>
+	</Page>
+</mvc:View>

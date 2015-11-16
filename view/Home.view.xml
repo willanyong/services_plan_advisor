@@ -1,0 +1,79 @@
+<mvc:View controllerName="sap.ui.demo.nav.controller.Home" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:suite="sap.suite.ui.commons" xmlns="sap.m">
+	<Page class="sapUiResponsiveContentPadding" title="{i18n>homePageTitle}">
+		<content>
+			<core:Fragment fragmentName="sap.ui.demo.nav.view.myFragment" type="XML"/>
+			<Panel id="OtherContainer" height="auto" width="auto">
+			<suite:GenericTile class="sapUiSmallMarginEnd" frameType="TwoByOne" header="Total Usage " press="onNavToUsageChart" size="L"
+				subheader="2015" type="Navigation">
+				<suite:tileContent>
+					<suite:TileContent footer="Actual" size="L" unit="kWh">
+						<suite:content>
+							<suite:ColumnMicroChart press="press" size="L">
+								<!--<suite:leftTopLabel>-->
+								<!--	<suite:ColumnMicroChartLabel label="June 1"/>-->
+								<!--</suite:leftTopLabel>-->
+								<!--<suite:rightTopLabel>-->
+								<!--	<suite:ColumnMicroChartLabel label="June 30"/>-->
+								<!--</suite:rightTopLabel>-->
+								<suite:leftBottomLabel>
+									<suite:ColumnMicroChartLabel label="Jan,2015"/>
+								</suite:leftBottomLabel>
+								<suite:rightBottomLabel>
+									<suite:ColumnMicroChartLabel label="Dec,2015"/>
+								</suite:rightBottomLabel>
+								<suite:columns>
+									<suite:ColumnData color="Error" value="65"/>
+									<suite:ColumnData color="Error" value="90"/>
+									<suite:ColumnData color="Error" value="75"/>
+									<suite:ColumnData color="Error" value="95"/>
+									<suite:ColumnData color="Error" value="100"/>
+									<suite:ColumnData color="Error" value="90"/>
+									<suite:ColumnData color="Error" value="80"/>
+									<suite:ColumnData color="Neutral" value="35"/>
+									<suite:ColumnData color="Neutral" value="65"/>
+									<suite:ColumnData color="Neutral" value="55"/>
+									<suite:ColumnData color="Neutral" value="60"/>
+									<suite:ColumnData color="Neutral" value="5"/>
+									<suite:ColumnData color="Neutral" value="15"/>
+									<suite:ColumnData color="Neutral" value="15"/>
+								</suite:columns>
+							</suite:ColumnMicroChart>
+						</suite:content>
+					</suite:TileContent>
+				</suite:tileContent>
+				<suite:tileContent>
+					<suite:TileContent footer="Actual" size="L" unit="kWh">
+						<suite:content>
+							<suite:NumericContent class="marginTopLeft" icon="sap-icon://electronic-medical-record" indicator="Up" press="press" scale="kWh" size="S"
+								state="Loaded" value="65.5" valueColor="Error"/>
+						</suite:content>
+					</suite:TileContent>
+				</suite:tileContent>
+			</suite:GenericTile>
+			<suite:GenericTile class="sapUiSmallMarginEnd" color="red" frameType="OneByOne" press="onNavToUsageBar" size="L"  header="Weekly Usage" >
+				<suite:tileContent>
+					<suite:TileContent size="M">
+						<suite:content>
+							<suite:ComparisonChart size="M" scale="kWh" class="marginTopLeft" press="onNavToUsageBar">
+						        <suite:data>
+						        	<suite:ComparisonData	title="This week" value="8.335" color="Good"/>
+						        	<suite:ComparisonData	title="Previous Week" value="92.356" color="Error"/>
+						        	<suite:ComparisonData	title="10/25 - 10/31" value="110.223" color="Error"/>
+						        </suite:data>
+						    </suite:ComparisonChart>
+						</suite:content>
+					</suite:TileContent>
+				</suite:tileContent>
+			</suite:GenericTile>
+			</Panel>
+
+			<Panel id="testpanel" class="sapUiResponsiveMargin" headerText="Recomanded Plan" width="auto"></Panel>
+			<TileContainer id="container" tileDelete="handleTileDelete" tiles="{plans>/TileCollection}">
+				<StandardTile icon="sap-icon://{plans>icon}" info="{plans>info}" infoState="{plans>infoState}" number="{plans>number}" numberUnit="{plans>numberUnit}" title="{plans>title}"
+					type="{plans>type}" press="onNavToPlanDisplay"/>
+			</TileContainer>
+			
+		</content>
+	</Page>
+</mvc:View>

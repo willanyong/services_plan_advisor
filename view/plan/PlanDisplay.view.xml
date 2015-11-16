@@ -1,0 +1,59 @@
+<mvc:View
+	controllerName="sap.ui.demo.nav.controller.plan.PlanDisplay"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="PlanDisplayPage" title="{info}"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		class="sapUiResponsiveContentPadding">
+		<l:VerticalLayout>
+		<l:content>
+				<Image
+					src="{image}"
+					densityAware="false" >
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Image>
+		<ObjectHeader
+			intro="{Planname}"
+			title="{title}"/>
+			<Text text="Cancelation fee : {Cancel}" /> 
+			
+			 <Text text="Customer Complain Rate : " /> <RatingIndicator maxValue="5" class="sapUiSmallMarginBottom" value="{Rate}"  tooltip="Rating" enabled="false" />
+			
+			<Link
+				text="Fact Sheet"
+				target="_blank"
+				href="{factsheet}" />
+			<Link
+				text="Terms of Service"
+				target="_blank"
+				href="{terms}" />
+			<TextArea value="{Remarks}" rows="5" width="80%" />
+			
+		<List
+		headerText="Contact" >
+		<items>
+			<DisplayListItem
+				label="Telephone"
+				value="{Tel}"
+				type="Active"
+				press="handleTelPress" />
+			<DisplayListItem
+				label="Email"
+				value="{Email}"
+				type="Active"
+				press="handleEmailPress" />
+			<DisplayListItem
+				label="Website"
+				value="{Url}"
+				type="Active"
+				press="handleUrlPress" />
+		</items>
+	</List>
+		</l:content>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>
